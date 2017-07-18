@@ -5,16 +5,17 @@
   <title>Welcome to Eninov Systems</title>
   
   
-  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link rel='stylesheet prefetch' href='css/font-awesome.min.css'>
 
   <link rel="stylesheet" href="css/style.css">
-
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
   
 </head>
 
 <body>
   <div class="login-form">
      <h1>Eninov</h1>
+     <form  onsubmit="return false;">
      <div class="form-group ">
        <input type="email" class="form-control" placeholder="Username/Email " id="UserName">
        <i class="fa fa-user"></i>
@@ -25,13 +26,48 @@
      </div>
       <span class="alert">Invalid Credentials</span>
       <a class="link" href="#">Lost your password?</a>
-     <button type="button" class="log-btn" >Log in</button>
-     
+     <input type="submit" class="log-btn" onclick="login()" value="Log in">
+     </form>
     
    </div>
+   <script type="text/javascript">
+    function login(){
+     var eninovIDTxt=document.getElementById('UserName').value;
+     var passwordTxt=document.getElementById('Password').value;
+     console.log(eninovIDTxt);
+     console.log(passwordTxt);
+    var eninovID="abc@gmail.com";
+    var password="abc";
+    console.log(eninovID);
+    console.log(password);
+     if((eninovIDTxt==eninovID)&&(passwordTxt==password))
+     {
+          
+           location.href = "navi/mainWindow.html";
+           //window.location.replace("navi/mainWindow.html");          
+     }
+     else{
+      fail();
+     }
+ }
+  </script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script type="text/javascript">
+    function fail(){
+          $(document).ready(function(){
+          $('.log-btn').click(function(){
+              $('.log-status').addClass('wrong-entry');
+             $('.alert').fadeIn(500);
+             setTimeout( "$('.alert').fadeOut(1500);",3000 );
+          });
+          $('.form-control').keypress(function(){
+              $('.log-status').removeClass('wrong-entry');
+          });
 
-  <script src="js/index.js"></script>
+        });
+      }
+  </script>
+  
 
 </body>
 </html>

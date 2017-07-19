@@ -31,6 +31,15 @@
     
    </div>
    <script type="text/javascript">
+
+    function fail()
+    {
+      //alert('fail');
+      $('.log-status').addClass('wrong-entry');
+      $('.alert').fadeIn(500);
+        setTimeout( "$('.alert').fadeOut(1500);",3000 );
+    }
+
     function login(){
      var eninovIDTxt=document.getElementById('UserName').value;
      var passwordTxt=document.getElementById('Password').value;
@@ -53,22 +62,17 @@
   </script>
   <script src='js/jquery.min.js'></script>
   <script type="text/javascript">
-    function fail(){
-          $(document).ready(function(){
-              $('.log-btn').click(function(){
-                  $('.log-status').addClass('wrong-entry');
-                  $('.alert').fadeIn(500);
-                  setTimeout( "$('.alert').fadeOut(1500);",3000 );
-              });
-            });
-          $(document).ready(function(){
-            
-              $('.form-control').keyup(function(){
-                  $('.log-status').removeClass('wrong-entry');
+   
+                  
+
+          
+              $('.form-control').keypress(function(){
+                if($('.log-status').hasClass('wrong-entry'))
+                    $('.log-status').removeClass('wrong-entry');
               });
 
-        });
-      }
+
+
   </script>
   
 

@@ -21,7 +21,7 @@
        <i class="fa fa-user"></i>
      </div>
      <div class="form-group log-status">
-       <input type="password" class="form-control" placeholder="Password" id="Password" onkeyup ="resett()">
+       <input type="password" class="form-control" placeholder="Password" id="Password" >
        <i class="fa fa-lock"></i>
      </div>
       <span class="alert">Invalid Credentials</span>
@@ -38,18 +38,19 @@
       $('.log-status').addClass('wrong-entry');
       $('.alert').fadeIn(500);
         setTimeout( "$('.alert').fadeOut(1500);",3000 );
+        setTimeout( "$('.log-status').removeClass('wrong-entry');",3000 );
     }
 
-    function resett()
+    /*function resett()
     {
 
            if($('.log-status').hasClass('wrong-entry'))
            {
-            alert("working");
+            
              $('.log-status').removeClass('wrong-entry');
            }
               
-    }
+    }*/
 
     function login(){
      var eninovIDTxt=document.getElementById('UserName').value;

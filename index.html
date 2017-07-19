@@ -65,12 +65,14 @@
    
                   
 
-          
+            $(document).ready(function(){
+
+        
               $('.form-control').keypress(function(){
                 if($('.log-status').hasClass('wrong-entry'))
                     $('.log-status').removeClass('wrong-entry');
               });
-
+            });
 
 
   </script>

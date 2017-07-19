@@ -7,6 +7,9 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+<plugin name="cordova-plugin-splashscreen" source="npm" />
+<splash platform="android" qualifier="port-ldpi" src="img/1.png" />
+<preference name="SplashScreenDelay" value="5000" />
     <content src="index.html" />
     <access origin="*" />
 </widget>
